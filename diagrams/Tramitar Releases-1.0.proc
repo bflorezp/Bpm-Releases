@@ -304,7 +304,7 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_FvTuDHpWEe2q-ta0CdyM3A" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:EndTerminatedEvent" xmi:id="_SNUWwHpqEe2q-ta0CdyM3A" name="Fin Archivo" incoming="_RLtIwHpqEe2q-ta0CdyM3A">
+        <elements xmi:type="process:EndTerminatedEvent" xmi:id="_SNUWwHpqEe2q-ta0CdyM3A" name="Fin Archivos" incoming="_RLtIwHpqEe2q-ta0CdyM3A">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_RLmbEXpqEe2q-ta0CdyM3A" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_RLmbEHpqEe2q-ta0CdyM3A" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_RLmbEnpqEe2q-ta0CdyM3A" name="" content="" returnTypeFixed="true"/>
@@ -571,7 +571,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_SNUWxHpqEe2q-ta0CdyM3A" type="3062" element="_SNUWwHpqEe2q-ta0CdyM3A" fontName="Segoe UI">
               <children xmi:type="notation:DecorationNode" xmi:id="_SNU90HpqEe2q-ta0CdyM3A" type="5090">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_SNU90XpqEe2q-ta0CdyM3A" y="5"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SNU90XpqEe2q-ta0CdyM3A" x="-1" y="17"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SNUWxXpqEe2q-ta0CdyM3A" x="587" y="27" width="30" height="30"/>
             </children>
