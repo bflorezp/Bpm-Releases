@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "TramitarRelease",
   "name" : "TramitarRelease",
-  "lastUpdate" : 1671127576947,
+  "lastUpdate" : 1671468996552,
   "rows" : [
     [
       {
@@ -613,7 +613,7 @@
                                           },
                                           "label" : {
                                             "type" : "interpolation",
-                                            "value" : "Documento de identificación"
+                                            "value" : "Documento de Identificación"
                                           },
                                           "labelPosition" : {
                                             "type" : "constant",
@@ -624,7 +624,8 @@
                                             "value" : 4
                                           },
                                           "placeholder" : {
-                                            "type" : "interpolation"
+                                            "type" : "interpolation",
+                                            "value" : "CC.pdf"
                                           },
                                           "url" : {
                                             "type" : "constant",
@@ -819,7 +820,7 @@
                                           },
                                           "label" : {
                                             "type" : "interpolation",
-                                            "value" : "Nit de la empresa"
+                                            "value" : "Nit de la Empresa"
                                           },
                                           "labelPosition" : {
                                             "type" : "constant",
@@ -1026,7 +1027,7 @@
                                           },
                                           "label" : {
                                             "type" : "interpolation",
-                                            "value" : "Documento de identificación"
+                                            "value" : "Documento de Identificación"
                                           },
                                           "labelPosition" : {
                                             "type" : "constant",
@@ -1037,7 +1038,8 @@
                                             "value" : 4
                                           },
                                           "placeholder" : {
-                                            "type" : "interpolation"
+                                            "type" : "interpolation",
+                                            "value" : "CC.pdf"
                                           },
                                           "url" : {
                                             "type" : "constant",
@@ -1083,7 +1085,7 @@
                                           },
                                           "label" : {
                                             "type" : "interpolation",
-                                            "value" : "Cámara y Comercio"
+                                            "value" : "Cámara De Comercio"
                                           },
                                           "labelPosition" : {
                                             "type" : "constant",
@@ -1094,7 +1096,8 @@
                                             "value" : 4
                                           },
                                           "placeholder" : {
-                                            "type" : "interpolation"
+                                            "type" : "interpolation",
+                                            "value" : "CyC.pdf"
                                           },
                                           "url" : {
                                             "type" : "constant",
@@ -1257,8 +1260,131 @@
                                   "dimension" : {
                                     "xs" : 12,
                                     "sm" : 12,
-                                    "md" : 6,
-                                    "lg" : 6
+                                    "md" : 4,
+                                    "lg" : 4
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "required" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "labelHidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "label" : {
+                                      "type" : "interpolation",
+                                      "value" : "Release Firmado"
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 7
+                                    },
+                                    "placeholder" : {
+                                      "type" : "interpolation",
+                                      "value" : "firmaCCP202212932.pdf"
+                                    },
+                                    "url" : {
+                                      "type" : "constant",
+                                      "value" : "../API/formFileUpload"
+                                    },
+                                    "value" : {
+                                      "type" : "variable",
+                                      "value" : "formInput.dbtramitesInput.doc_Release"
+                                    },
+                                    "errorContent" : {
+                                      "type" : "variable",
+                                      "value" : "formOutput._submitError"
+                                    }
+                                  },
+                                  "reference" : "093df612-20b1-4d75-93b0-acc958ec213b",
+                                  "hasValidationError" : false,
+                                  "id" : "pbUpload"
+                                },
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 4,
+                                    "lg" : 4
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "readOnly" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "required" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "labelHidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "label" : {
+                                      "type" : "interpolation",
+                                      "value" : "Codigo de Release"
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
+                                    },
+                                    "placeholder" : {
+                                      "type" : "interpolation"
+                                    },
+                                    "availableValues" : {
+                                      "type" : "expression",
+                                      "value" : "codigos"
+                                    },
+                                    "displayedKey" : {
+                                      "type" : "constant",
+                                      "value" : "consecutivo"
+                                    },
+                                    "returnedKey" : {
+                                      "type" : "constant",
+                                      "value" : "consecutivo"
+                                    },
+                                    "value" : {
+                                      "type" : "variable",
+                                      "value" : "formInput.dbtramitesInput.codigo"
+                                    }
+                                  },
+                                  "reference" : "4ffc082c-bc7d-4f0c-a616-ab283c84f1fa",
+                                  "hasValidationError" : false,
+                                  "id" : "pbAutocomplete"
+                                },
+                                {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 4,
+                                    "lg" : 4
                                   },
                                   "propertyValues" : {
                                     "cssClasses" : {
@@ -1317,71 +1443,6 @@
                                   "reference" : "1a878227-9882-4e4e-83da-b16dad6f38e9",
                                   "hasValidationError" : false,
                                   "id" : "pbSelect"
-                                },
-                                {
-                                  "type" : "component",
-                                  "dimension" : {
-                                    "xs" : 12,
-                                    "sm" : 12,
-                                    "md" : 6,
-                                    "lg" : 6
-                                  },
-                                  "propertyValues" : {
-                                    "cssClasses" : {
-                                      "type" : "constant",
-                                      "value" : ""
-                                    },
-                                    "hidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "readOnly" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "required" : {
-                                      "type" : "constant",
-                                      "value" : true
-                                    },
-                                    "labelHidden" : {
-                                      "type" : "constant",
-                                      "value" : false
-                                    },
-                                    "label" : {
-                                      "type" : "interpolation",
-                                      "value" : "Codigo de Release"
-                                    },
-                                    "labelPosition" : {
-                                      "type" : "constant",
-                                      "value" : "top"
-                                    },
-                                    "labelWidth" : {
-                                      "type" : "constant",
-                                      "value" : 4
-                                    },
-                                    "placeholder" : {
-                                      "type" : "interpolation"
-                                    },
-                                    "availableValues" : {
-                                      "type" : "expression",
-                                      "value" : "codigos"
-                                    },
-                                    "displayedKey" : {
-                                      "type" : "constant",
-                                      "value" : "consecutivo"
-                                    },
-                                    "returnedKey" : {
-                                      "type" : "constant",
-                                      "value" : "consecutivo"
-                                    },
-                                    "value" : {
-                                      "type" : "variable",
-                                      "value" : "formInput.dbtramitesInput.codigo"
-                                    }
-                                  },
-                                  "reference" : "4ffc082c-bc7d-4f0c-a616-ab283c84f1fa",
-                                  "hasValidationError" : false,
-                                  "id" : "pbAutocomplete"
                                 }
                               ],
                               [
@@ -1577,7 +1638,7 @@
                               },
                               "label" : {
                                 "type" : "interpolation",
-                                "value" : "Son audios o Videos?"
+                                "value" : "Son Audios o Videos?"
                               },
                               "labelPosition" : {
                                 "type" : "constant",
@@ -2225,7 +2286,8 @@
         "    \"url\" : \"\",\r",
         "    \"estado\" : \"Release enviado para aprobación de director\",\r",
         "    \"cyc_doc\": null,\r",
-        "    \"soporte_doc\": []\r",
+        "    \"soporte_doc\": [],\r",
+        "    \"doc_Release\": \"\"\r",
         "  },\r",
         "  \"soporte\": \"\"\r",
         "}"
@@ -2261,7 +2323,7 @@
     "directores" : {
       "type" : "url",
       "value" : [
-        "../API/identity/user?p=0&c=100&o=lastname%20ASC&f=enabled=true&f=role_id=2"
+        "../API/identity/user?p=0&c=100&o=lastname%20ASC&f=enabled=true&f=role_id=101"
       ],
       "advancedOptions" : { },
       "exposed" : false

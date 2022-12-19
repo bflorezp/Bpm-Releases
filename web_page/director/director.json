@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "director",
   "name" : "director",
-  "lastUpdate" : 1671057369270,
+  "lastUpdate" : 1671469082799,
   "rows" : [
     [
       {
@@ -172,7 +172,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Observaciónes"
+                    "value" : "Observaciones"
                   },
                   "placeholder" : {
                     "type" : "constant"
@@ -294,7 +294,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Rechazado"
+                    "value" : "Rechazar"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -387,7 +387,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Aceptar"
+                    "value" : "Aprobar"
                   },
                   "dataToSend" : {
                     "type" : "expression",

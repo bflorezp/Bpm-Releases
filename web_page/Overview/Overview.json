@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "Overview",
   "name" : "Overview",
-  "lastUpdate" : 1671057124333,
+  "lastUpdate" : 1671469030097,
   "rows" : [
     [
       {
@@ -227,8 +227,8 @@
               "dimension" : {
                 "xs" : 12,
                 "sm" : 12,
-                "md" : 6,
-                "lg" : 6
+                "md" : 4,
+                "lg" : 4
               },
               "propertyValues" : {
                 "cssClasses" : {
@@ -277,8 +277,75 @@
               "dimension" : {
                 "xs" : 12,
                 "sm" : 12,
-                "md" : 6,
-                "lg" : 6
+                "md" : 4,
+                "lg" : 4
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "<b>Release</b><br>{{context.release_pdf_ref.contentFileName}}"
+                },
+                "type" : {
+                  "type" : "constant",
+                  "value" : "URL"
+                },
+                "targetUrl" : {
+                  "type" : "expression",
+                  "value" : "release_pdfLink"
+                },
+                "pageToken" : {
+                  "type" : "constant"
+                },
+                "processName" : {
+                  "type" : "constant"
+                },
+                "processVersion" : {
+                  "type" : "constant"
+                },
+                "taskId" : {
+                  "type" : "constant"
+                },
+                "caseId" : {
+                  "type" : "constant"
+                },
+                "target" : {
+                  "type" : "constant",
+                  "value" : "_blank"
+                },
+                "appToken" : {
+                  "type" : "constant"
+                },
+                "urlParams" : {
+                  "type" : "constant"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                },
+                "buttonStyle" : {
+                  "type" : "constant",
+                  "value" : "link"
+                }
+              },
+              "reference" : "3f0ad498-8cb8-4643-8a2d-daf761dbf28d",
+              "hasValidationError" : false,
+              "id" : "pbLink"
+            },
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 4,
+                "lg" : 4
               },
               "propertyValues" : {
                 "cssClasses" : {
@@ -303,7 +370,7 @@
                 },
                 "labelWidth" : {
                   "type" : "constant",
-                  "value" : 4
+                  "value" : 11
                 },
                 "allowHTML" : {
                   "type" : "constant",
@@ -961,7 +1028,7 @@
                 },
                 "label" : {
                   "type" : "interpolation",
-                  "value" : "Director Aprobador"
+                  "value" : "Nombre"
                 },
                 "labelPosition" : {
                   "type" : "constant",
@@ -1019,7 +1086,7 @@
                 },
                 "labelWidth" : {
                   "type" : "constant",
-                  "value" : 6
+                  "value" : 10
                 },
                 "allowHTML" : {
                   "type" : "constant",
@@ -1645,6 +1712,14 @@
         "}else{",
         "    return \"Rechazado\";",
         "}"
+      ],
+      "exposed" : false
+    },
+    "release_pdfLink" : {
+      "type" : "expression",
+      "value" : [
+        "var newURL = window.location.protocol + \"//\" + window.location.host + \"/bonita/portal/resource/taskInstance/Tramitar%20Releases/1.0/Aprueba%20_Jurídica/API/formsDocumentImage?document=\"+ $data.context.release_pdf_ref.id",
+        "return newURL;"
       ],
       "exposed" : false
     }
