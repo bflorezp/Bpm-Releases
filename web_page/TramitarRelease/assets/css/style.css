@@ -35,3 +35,9 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
     z-index: 9999;
 }
 
+.anunciadoData{
+    color: #C0392B;
+    background-color: #CCD1D1;
+    font-family: sans-serif;
+}
+

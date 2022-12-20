@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "Juridica",
   "name" : "Juridica",
-  "lastUpdate" : 1671458606339,
+  "lastUpdate" : 1671489592577,
   "rows" : [
     [
       {
@@ -136,6 +136,66 @@
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 4,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "required" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Release Firmado"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  },
+                  "placeholder" : {
+                    "type" : "interpolation",
+                    "value" : "Release Firmado"
+                  },
+                  "url" : {
+                    "type" : "constant",
+                    "value" : "../API/formFileUpload"
+                  },
+                  "value" : {
+                    "type" : "variable",
+                    "value" : "formInput.doc_Release_Juridica"
+                  },
+                  "errorContent" : {
+                    "type" : "variable",
+                    "value" : ""
+                  }
+                },
+                "reference" : "b95bcab4-6c5c-4693-b1b8-29aa29ad601f",
+                "hasValidationError" : false,
+                "id" : "pbUpload"
+              }
+            ],
             [
               {
                 "type" : "component",
@@ -515,7 +575,8 @@
         "\t\t    id_juridica: $data.dbtramites.id_juridica = $data.session.user_id,",
         "\t\t\taprobacion_juridica: $data.dbtramites.aprobacion_juridica = true,",
         "\t\t\tobs_juridica: $data.dbtramites.obs_juridica !== undefined ? $data.dbtramites.obs_juridica : null",
-        "\t\t}",
+        "\t\t},",
+        "\t\tdoc_Release_Juridica: $data.formInput.doc_Release_Juridica",
         "\t}",
         "}"
       ],
@@ -552,7 +613,8 @@
         "\t\t\tid_juridica: $data.dbtramites.id_juridica = $data.session.user_id,",
         "\t\t\taprobacion_juridica: $data.dbtramites.aprobacion_juridica = false,",
         "\t\t\tobs_juridica: $data.dbtramites.obs_juridica !== undefined ? $data.dbtramites.obs_juridica : null",
-        "\t\t}",
+        "\t\t},",
+        "\t\tdoc_Release_Juridica: $data.formInput.doc_Release_Juridica",
         "\t}",
         "}"
       ],
@@ -564,6 +626,15 @@
         "../API/system/session/user_id"
       ],
       "advancedOptions" : { },
+      "exposed" : false
+    },
+    "formInput" : {
+      "type" : "json",
+      "value" : [
+        "{\r",
+        "  \"doc_Release_Juridica\" : null\r",
+        "}"
+      ],
       "exposed" : false
     }
   },
