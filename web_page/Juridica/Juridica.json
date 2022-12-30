@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "Juridica",
   "name" : "Juridica",
-  "lastUpdate" : 1671489592577,
+  "lastUpdate" : 1672173150073,
   "rows" : [
     [
       {
@@ -143,7 +143,7 @@
                   "xs" : 12,
                   "sm" : 12,
                   "md" : 4,
-                  "lg" : 12
+                  "lg" : 6
                 },
                 "propertyValues" : {
                   "cssClasses" : {
@@ -194,6 +194,72 @@
                 "reference" : "b95bcab4-6c5c-4693-b1b8-29aa29ad601f",
                 "hasValidationError" : false,
                 "id" : "pbUpload"
+              },
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 8,
+                  "lg" : 6
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "disabled" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "required" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Enviar copia al director de fotografía?"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 7
+                  },
+                  "inline" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "availableValues" : {
+                    "type" : "expression",
+                    "value" : "desicion"
+                  },
+                  "displayedKey" : {
+                    "type" : "constant",
+                    "value" : "nombre"
+                  },
+                  "returnedKey" : {
+                    "type" : "constant",
+                    "value" : "id"
+                  },
+                  "selectedValue" : {
+                    "type" : "variable",
+                    "value" : "dbtramites.copiaFoto"
+                  }
+                },
+                "reference" : "fa96810c-5a86-4581-984b-ac35450c0589",
+                "hasValidationError" : false,
+                "id" : "pbRadioButtons"
               }
             ],
             [
@@ -568,10 +634,11 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.dbtramites ){",
+        "if( $data.dbtramites && $data.formInput.doc_Release_Juridica !== null){",
         "\treturn {",
         "\t\t//map dbtramites variable to expected task contract input",
         "\t\tdbtramitesInput: {",
+        "\t\t    copiaFoto: $data.dbtramites.copiaFoto,",
         "\t\t    id_juridica: $data.dbtramites.id_juridica = $data.session.user_id,",
         "\t\t\taprobacion_juridica: $data.dbtramites.aprobacion_juridica = true,",
         "\t\t\tobs_juridica: $data.dbtramites.obs_juridica !== undefined ? $data.dbtramites.obs_juridica : null",
@@ -610,7 +677,8 @@
         "\treturn {",
         "\t\t//map dbtramites variable to expected task contract input",
         "\t\tdbtramitesInput: {",
-        "\t\t\tid_juridica: $data.dbtramites.id_juridica = $data.session.user_id,",
+        "\t\t    copiaFoto: $data.dbtramites.copiaFoto,",
+        "\t\t    id_juridica: $data.dbtramites.id_juridica = $data.session.user_id,",
         "\t\t\taprobacion_juridica: $data.dbtramites.aprobacion_juridica = false,",
         "\t\t\tobs_juridica: $data.dbtramites.obs_juridica !== undefined ? $data.dbtramites.obs_juridica : null",
         "\t\t},",
@@ -634,6 +702,13 @@
         "{\r",
         "  \"doc_Release_Juridica\" : null\r",
         "}"
+      ],
+      "exposed" : false
+    },
+    "desicion" : {
+      "type" : "json",
+      "value" : [
+        "[{\"id\":true,\"nombre\":\"Si\"},{\"id\":false,\"nombre\":\"No\"}]"
       ],
       "exposed" : false
     }

@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "Overview",
   "name" : "Overview",
-  "lastUpdate" : 1671469030097,
+  "lastUpdate" : 1672177823982,
   "rows" : [
     [
       {
@@ -48,7 +48,7 @@
                 },
                 "cssClasses" : {
                   "type" : "constant",
-                  "value" : ""
+                  "value" : "titles"
                 },
                 "text" : {
                   "type" : "interpolation",
@@ -93,7 +93,7 @@
                 },
                 "label" : {
                   "type" : "interpolation",
-                  "value" : "Creador del Release"
+                  "value" : "Gestor de Release"
                 },
                 "labelPosition" : {
                   "type" : "constant",
@@ -135,7 +135,7 @@
                 },
                 "hidden" : {
                   "type" : "expression",
-                  "value" : "!dbtramites.fecha_creacion"
+                  "value" : "!dataReleaseTable[0].fecha_creacion"
                 },
                 "labelHidden" : {
                   "type" : "constant",
@@ -151,7 +151,7 @@
                 },
                 "labelWidth" : {
                   "type" : "constant",
-                  "value" : 11
+                  "value" : 12
                 },
                 "allowHTML" : {
                   "type" : "constant",
@@ -159,7 +159,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "{{dbtramites.fecha_creacion}}"
+                  "value" : "{{dataReleaseTable[0].fecha_creacion}}"
                 },
                 "alignment" : {
                   "type" : "constant",
@@ -201,7 +201,7 @@
                 },
                 "labelWidth" : {
                   "type" : "constant",
-                  "value" : 9
+                  "value" : 12
                 },
                 "allowHTML" : {
                   "type" : "constant",
@@ -253,7 +253,7 @@
                 },
                 "labelWidth" : {
                   "type" : "constant",
-                  "value" : 4
+                  "value" : 12
                 },
                 "allowHTML" : {
                   "type" : "constant",
@@ -286,12 +286,349 @@
                   "value" : ""
                 },
                 "hidden" : {
+                  "type" : "expression",
+                  "value" : "!dataReleaseTable[0].id_area"
+                },
+                "labelHidden" : {
                   "type" : "constant",
                   "value" : false
                 },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Área"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "<b>Release</b><br>{{context.release_pdf_ref.contentFileName}}"
+                  "value" : "{{areas.displayName}}"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "6fba0903-40ff-453d-8bc2-3fe026a0e8c7",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            },
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 4,
+                "lg" : 4
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "dbtramites.id_creador == dataReleaseTable[0].id_creador"
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Creador del Release"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "{{dataCradorRelease.userName}}"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "92ef5f79-5874-4dd5-8985-0f9b61076fc3",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 6
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "426c9d68-c760-41a9-96c4-946e814fcc94",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 4,
+                "lg" : 4
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!dbtramites.text_informativo"
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Nota del Creador"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "{{dbtramites.text_informativo}}"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "f38c177c-95d1-4ad9-b09d-ca1dcc15e3a3",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            },
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 4,
+                "lg" : 4
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!dataReleaseTable[0].proyecto_anio"
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Proyecto/Año"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "{{dataReleaseTable[0].proyecto_anio}}"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "a56a9f96-8cae-4d20-83df-a3a837d1a74d",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            },
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 4,
+                "lg" : 4
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!dataReleaseTable[0].revista_edicion"
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Revista / Edición"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "{{dataReleaseTable[0].revista_edicion}}"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "481215d3-2cc2-4458-814c-671bbdc58b6a",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : "titles"
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!context.release_pdf_ref"
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "<b>Release Cargado.</b>"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "e1c94f73-b09a-458d-89a0-2db50ef91f3d",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!context.release_pdf_ref"
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "{{context.release_pdf_ref.contentFileName}}"
                 },
                 "type" : {
                   "type" : "constant",
@@ -299,7 +636,7 @@
                 },
                 "targetUrl" : {
                   "type" : "expression",
-                  "value" : "release_pdfLink"
+                  "value" : "pathLinkDocuments + context.release_pdf_ref.id"
                 },
                 "pageToken" : {
                   "type" : "constant"
@@ -332,62 +669,12 @@
                 },
                 "buttonStyle" : {
                   "type" : "constant",
-                  "value" : "link"
+                  "value" : "info"
                 }
               },
               "reference" : "3f0ad498-8cb8-4643-8a2d-daf761dbf28d",
               "hasValidationError" : false,
               "id" : "pbLink"
-            },
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 12,
-                "sm" : 12,
-                "md" : 4,
-                "lg" : 4
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "hidden" : {
-                  "type" : "expression",
-                  "value" : "!dbtramites.text_informativo"
-                },
-                "labelHidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "label" : {
-                  "type" : "interpolation",
-                  "value" : "Nota del Creador"
-                },
-                "labelPosition" : {
-                  "type" : "constant",
-                  "value" : "top"
-                },
-                "labelWidth" : {
-                  "type" : "constant",
-                  "value" : 11
-                },
-                "allowHTML" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "{{dbtramites.text_informativo}}"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "left"
-                }
-              },
-              "reference" : "f38c177c-95d1-4ad9-b09d-ca1dcc15e3a3",
-              "hasValidationError" : false,
-              "id" : "pbText"
             }
           ],
           [
@@ -402,7 +689,7 @@
               "propertyValues" : {
                 "cssClasses" : {
                   "type" : "constant",
-                  "value" : ""
+                  "value" : "titles"
                 },
                 "hidden" : {
                   "type" : "expression",
@@ -736,67 +1023,17 @@
               "dimension" : {
                 "xs" : 12,
                 "sm" : 12,
-                "md" : 6,
+                "md" : 12,
                 "lg" : 6
               },
               "propertyValues" : {
                 "cssClasses" : {
                   "type" : "constant",
-                  "value" : ""
-                },
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "labelHidden" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "label" : {
-                  "type" : "interpolation",
-                  "value" : "Default label"
-                },
-                "labelPosition" : {
-                  "type" : "constant",
-                  "value" : "top"
-                },
-                "labelWidth" : {
-                  "type" : "constant",
-                  "value" : 4
-                },
-                "allowHTML" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "<b>Documento de Identidad</b>"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "center"
-                }
-              },
-              "reference" : "d45e9532-0a1d-445f-a0d7-d22d848f59f3",
-              "hasValidationError" : false,
-              "id" : "pbText"
-            },
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 12,
-                "sm" : 12,
-                "md" : 6,
-                "lg" : 6
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
+                  "value" : "titles"
                 },
                 "hidden" : {
                   "type" : "expression",
-                  "value" : "dbtramites.tipo_persona == \"Natural\""
+                  "value" : "!context.terceroDocumento_ref"
                 },
                 "labelHidden" : {
                   "type" : "constant",
@@ -820,88 +1057,21 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "<b>Cámara y Comercio</b>"
+                  "value" : "<b>Documentos Proveedor</b>"
                 },
                 "alignment" : {
                   "type" : "constant",
-                  "value" : "center"
+                  "value" : "left"
                 }
               },
-              "reference" : "55fb4f38-31c0-4178-8346-ddb2deba4671",
+              "reference" : "d45e9532-0a1d-445f-a0d7-d22d848f59f3",
               "hasValidationError" : false,
               "id" : "pbText"
             }
           ],
           [
             {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 12,
-                "sm" : 12,
-                "md" : 6,
-                "lg" : 6
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : "!context.ccDocument_ref.contentFileName"
-                },
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "{{context.ccDocument_ref.contentFileName}}"
-                },
-                "type" : {
-                  "type" : "constant",
-                  "value" : "URL"
-                },
-                "targetUrl" : {
-                  "type" : "expression",
-                  "value" : "ccDocumentLink"
-                },
-                "pageToken" : {
-                  "type" : "constant"
-                },
-                "processName" : {
-                  "type" : "constant"
-                },
-                "processVersion" : {
-                  "type" : "constant"
-                },
-                "taskId" : {
-                  "type" : "constant"
-                },
-                "caseId" : {
-                  "type" : "constant"
-                },
-                "target" : {
-                  "type" : "constant",
-                  "value" : "_blank"
-                },
-                "appToken" : {
-                  "type" : "constant"
-                },
-                "urlParams" : {
-                  "type" : "constant"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "left"
-                },
-                "buttonStyle" : {
-                  "type" : "constant",
-                  "value" : "link"
-                }
-              },
-              "reference" : "2609bc3c-d3f2-4bc7-845e-7f02b6919263",
-              "hasValidationError" : false,
-              "id" : "pbLink"
-            },
-            {
-              "type" : "component",
+              "type" : "container",
               "dimension" : {
                 "xs" : 12,
                 "sm" : 12,
@@ -915,57 +1085,167 @@
                 },
                 "hidden" : {
                   "type" : "expression",
-                  "value" : "dbtramites.tipo_persona == \"Natural\""
+                  "value" : "!context.terceroDocumento_ref"
                 },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "{{context.cycDocument_ref.contentFileName}}"
-                },
-                "type" : {
-                  "type" : "constant",
-                  "value" : "URL"
-                },
-                "targetUrl" : {
-                  "type" : "expression",
-                  "value" : "cycDocumentLink"
-                },
-                "pageToken" : {
-                  "type" : "constant"
-                },
-                "processName" : {
-                  "type" : "constant"
-                },
-                "processVersion" : {
-                  "type" : "constant"
-                },
-                "taskId" : {
-                  "type" : "constant"
-                },
-                "caseId" : {
-                  "type" : "constant"
-                },
-                "target" : {
-                  "type" : "constant",
-                  "value" : "_blank"
-                },
-                "appToken" : {
-                  "type" : "constant"
-                },
-                "urlParams" : {
-                  "type" : "constant"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "left"
-                },
-                "buttonStyle" : {
-                  "type" : "constant",
-                  "value" : "link"
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : "context.terceroDocumento_ref"
                 }
               },
-              "reference" : "d0ebfb34-f3d8-4998-8e23-16a9043846ed",
+              "reference" : "872859ed-aedf-4298-9036-aa8c0abe941e",
               "hasValidationError" : false,
-              "id" : "pbLink"
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "{{$item.contentFileName}}"
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "URL"
+                      },
+                      "targetUrl" : {
+                        "type" : "expression",
+                        "value" : "pathLinkDocuments+ $item.id"
+                      },
+                      "pageToken" : {
+                        "type" : "constant"
+                      },
+                      "processName" : {
+                        "type" : "constant"
+                      },
+                      "processVersion" : {
+                        "type" : "constant"
+                      },
+                      "taskId" : {
+                        "type" : "constant"
+                      },
+                      "caseId" : {
+                        "type" : "constant"
+                      },
+                      "target" : {
+                        "type" : "constant",
+                        "value" : "_blank"
+                      },
+                      "appToken" : {
+                        "type" : "constant"
+                      },
+                      "urlParams" : {
+                        "type" : "constant"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      },
+                      "buttonStyle" : {
+                        "type" : "constant",
+                        "value" : "info"
+                      }
+                    },
+                    "reference" : "efac54f4-f3cb-40d1-be55-7ed0fb77c18e",
+                    "hasValidationError" : false,
+                    "id" : "pbLink"
+                  }
+                ]
+              ]
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 6,
+                "lg" : 6
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "0f1d8064-d59d-47c8-ac21-9bbed6334175",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Default label"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<b>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "58b2dff9-d9c7-47a6-b61e-dc0880b5ee93",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ]
+              ]
             }
           ],
           [
@@ -980,7 +1260,7 @@
               "propertyValues" : {
                 "cssClasses" : {
                   "type" : "constant",
-                  "value" : ""
+                  "value" : "titles"
                 },
                 "hidden" : {
                   "type" : "expression",
@@ -1220,7 +1500,7 @@
               "propertyValues" : {
                 "cssClasses" : {
                   "type" : "constant",
-                  "value" : ""
+                  "value" : "titles"
                 },
                 "hidden" : {
                   "type" : "expression",
@@ -1460,7 +1740,128 @@
               "propertyValues" : {
                 "cssClasses" : {
                   "type" : "constant",
+                  "value" : "titles"
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!context.releaseJuridica_ref"
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "<b>Release Firmado Por Jurídica</b>"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "0e483963-59c5-4454-a201-7f0fc481ed51",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
                   "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "!context.releaseJuridica_ref"
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "{{context.releaseJuridica_ref.contentFileName}}"
+                },
+                "type" : {
+                  "type" : "constant",
+                  "value" : "URL"
+                },
+                "targetUrl" : {
+                  "type" : "expression",
+                  "value" : "pathLinkDocuments + context.releaseJuridica_ref.id"
+                },
+                "pageToken" : {
+                  "type" : "constant"
+                },
+                "processName" : {
+                  "type" : "constant"
+                },
+                "processVersion" : {
+                  "type" : "constant"
+                },
+                "taskId" : {
+                  "type" : "constant"
+                },
+                "caseId" : {
+                  "type" : "constant"
+                },
+                "target" : {
+                  "type" : "constant",
+                  "value" : "_blank"
+                },
+                "appToken" : {
+                  "type" : "constant"
+                },
+                "urlParams" : {
+                  "type" : "constant"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                },
+                "buttonStyle" : {
+                  "type" : "constant",
+                  "value" : "info"
+                }
+              },
+              "reference" : "41066164-599e-4219-ac07-1e765271ea7d",
+              "hasValidationError" : false,
+              "id" : "pbLink"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : "titles"
                 },
                 "hidden" : {
                   "type" : "expression",
@@ -1476,7 +1877,7 @@
                 },
                 "alignment" : {
                   "type" : "constant",
-                  "value" : "center"
+                  "value" : "left"
                 }
               },
               "reference" : "c981be3d-ec76-4307-adc0-7d03fea04651",
@@ -1529,26 +1930,55 @@
                         "type" : "constant",
                         "value" : false
                       },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "{{$item.contentFileName}}"
+                      },
                       "type" : {
                         "type" : "constant",
-                        "value" : "Process document"
+                        "value" : "URL"
                       },
-                      "url" : {
+                      "targetUrl" : {
+                        "type" : "expression",
+                        "value" : "pathLinkDocuments+$item.id"
+                      },
+                      "pageToken" : {
+                        "type" : "constant"
+                      },
+                      "processName" : {
+                        "type" : "constant"
+                      },
+                      "processVersion" : {
+                        "type" : "constant"
+                      },
+                      "taskId" : {
+                        "type" : "constant"
+                      },
+                      "caseId" : {
+                        "type" : "constant"
+                      },
+                      "target" : {
                         "type" : "constant",
-                        "value" : ""
+                        "value" : "_blank"
                       },
-                      "document" : {
-                        "type" : "variable",
-                        "value" : "$item"
+                      "appToken" : {
+                        "type" : "constant"
                       },
-                      "showPreview" : {
+                      "urlParams" : {
+                        "type" : "constant"
+                      },
+                      "alignment" : {
                         "type" : "constant",
-                        "value" : false
+                        "value" : "left"
+                      },
+                      "buttonStyle" : {
+                        "type" : "constant",
+                        "value" : "info"
                       }
                     },
-                    "reference" : "2c868b9e-58b0-4098-945d-2a4a20093c95",
+                    "reference" : "db4036c6-db3b-491b-8f67-4c2bf49aed3e",
                     "hasValidationError" : false,
-                    "id" : "pbFileViewer"
+                    "id" : "pbLink"
                   }
                 ]
               ]
@@ -1669,22 +2099,6 @@
       "advancedOptions" : { },
       "exposed" : false
     },
-    "ccDocumentLink" : {
-      "type" : "expression",
-      "value" : [
-        "var newURL = window.location.protocol + \"//\" + window.location.host + \"/bonita/portal/resource/taskInstance/Tramitar%20Releases/1.0/Aprueba%20_Jurídica/API/formsDocumentImage?document=\"+ $data.context.ccDocument_ref.id",
-        "return newURL;"
-      ],
-      "exposed" : false
-    },
-    "cycDocumentLink" : {
-      "type" : "expression",
-      "value" : [
-        "var newURL = window.location.protocol + \"//\" + window.location.host + \"/bonita/portal/resource/taskInstance/Tramitar%20Releases/1.0/Aprueba%20_Jurídica/API/formsDocumentImage?document=\"+ $data.context.cycDocument_ref.id",
-        "return newURL;"
-      ],
-      "exposed" : false
-    },
     "jsRespuestaDirector" : {
       "type" : "expression",
       "value" : [
@@ -1715,12 +2129,50 @@
       ],
       "exposed" : false
     },
-    "release_pdfLink" : {
+    "processDef" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/process?p=0&c=1&f=name=Tramitar Releases&f=activationState=ENABLED"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "dataReleaseGenerado" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"findByConsecutivo [co.com.semana.bpm.model.Codigos]\",\"businessObjectName\":\"Codigos\",\"query\":{\"name\":\"findByConsecutivo\",\"displayName\":\"findByConsecutivo\"},\"id\":\"co.com.semana.bpm.model.Codigos\",\"filters\":[{\"name\":\"consecutivo\",\"type\":\"STRING\",\"collection\":false,\"value\":\"{{dbtramites.codigo}}\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "dataReleaseTable" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"findById_caso [co.com.semana.bpm.model.ReleaseGenerado]\",\"businessObjectName\":\"ReleaseGenerado\",\"query\":{\"name\":\"findById_caso\",\"displayName\":\"findById_caso\"},\"id\":\"co.com.semana.bpm.model.ReleaseGenerado\",\"filters\":[{\"name\":\"id_caso\",\"type\":\"LONG\",\"collection\":false,\"value\":\"{{dataReleaseGenerado[0].id_release_creado}}\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "areas" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/group/{{dataReleaseTable[0].id_area}}"
+      ],
+      "advancedOptions" : { },
+      "exposed" : false
+    },
+    "pathLinkDocuments" : {
       "type" : "expression",
       "value" : [
-        "var newURL = window.location.protocol + \"//\" + window.location.host + \"/bonita/portal/resource/taskInstance/Tramitar%20Releases/1.0/Aprueba%20_Jurídica/API/formsDocumentImage?document=\"+ $data.context.release_pdf_ref.id",
+        "var newURL = window.location.protocol + \"//\" + window.location.host + \"/bonita/portal/resource/processInstance/\"+$data.processDef[0].name+\"/\" + $data.processDef[0].version + \"/API/formsDocumentImage?document=\"",
         "return newURL;"
       ],
+      "exposed" : false
+    },
+    "dataCradorRelease" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/user/{{dataReleaseTable[0].id_creador}}"
+      ],
+      "advancedOptions" : { },
       "exposed" : false
     }
   },

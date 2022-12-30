@@ -100,7 +100,7 @@
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_DUJqC0AkEe2k-qrfh9_9iQ" key="replacements">
                 <expression xmi:type="expression:TableExpression" xmi:id="_DUJqDEAkEe2k-qrfh9_9iQ">
                   <expressions xmi:type="expression:ListExpression" xmi:id="_DUJqDUAkEe2k-qrfh9_9iQ">
-                    <expressions xmi:type="expression:Expression" xmi:id="_DUJqDkAkEe2k-qrfh9_9iQ" name="id_caso" content="id_caso" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_DUJqDkAkEe2k-qrfh9_9iQ" name="Code" content="Code" returnTypeFixed="true"/>
                     <expressions xmi:type="expression:Expression" xmi:id="_DUJqD0AkEe2k-qrfh9_9iQ" name="ScriptDataConsecutivo()" content="def caso = releases_generado.id_caso;&#xD;&#xA;def codigosProceso = codigosDAO.findById_release_creado(caso, 0, 10);&#xD;&#xA;def numIndex = contador - 1;&#xD;&#xA;&#xD;&#xA;return codigosProceso.get(numIndex).getConsecutivo();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
                       <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_JYKjsF9-Ee2-4uHbmPgDEg" name="releases_generado" dataType="_DUKQ5EAkEe2k-qrfh9_9iQ" className="co.com.semana.bpm.model.ReleaseGenerado"/>
                       <referencedElements xmi:type="process:Data" xmi:id="_JYKjsV9-Ee2-4uHbmPgDEg" documentation="se usa para contar las repeticiones de cada copia impresa" name="contador" dataType="_DUJqwEAkEe2k-qrfh9_9iQ"/>
@@ -108,9 +108,22 @@
                     </expressions>
                   </expressions>
                   <expressions xmi:type="expression:ListExpression" xmi:id="_DUJqE0AkEe2k-qrfh9_9iQ">
-                    <expressions xmi:type="expression:Expression" xmi:id="_DUJqFEAkEe2k-qrfh9_9iQ" name="date_now" content="date_now" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_DUJqFEAkEe2k-qrfh9_9iQ" name="Fecha" content="Fecha" returnTypeFixed="true"/>
                     <expressions xmi:type="expression:Expression" xmi:id="_DUJqFUAkEe2k-qrfh9_9iQ" name="ScriptFecha()" content="return releases_generado.fecha_creacion" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
                       <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_DUJqFkAkEe2k-qrfh9_9iQ" name="releases_generado" dataType="_DUKQ5EAkEe2k-qrfh9_9iQ" className="co.com.semana.bpm.model.ReleaseGenerado"/>
+                    </expressions>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_j4hO4IMKEe2ikdr4SJ67Pg">
+                    <expressions xmi:type="expression:Expression" xmi:id="_j4hO4YMKEe2ikdr4SJ67Pg" name="Create" content="Create" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_j4hO4oMKEe2ikdr4SJ67Pg" name="userNamet()" content="def user = apiAccessor.getIdentityAPI().getUser(releases_generado.id_creador)&#xD;&#xA;return user.userName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="expression:Expression" xmi:id="_j4hO44MKEe2ikdr4SJ67Pg" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_j4hO5IMKEe2ikdr4SJ67Pg" name="releases_generado" dataType="_DUKQ5EAkEe2k-qrfh9_9iQ" className="co.com.semana.bpm.model.ReleaseGenerado"/>
+                    </expressions>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_j4hO5YMKEe2ikdr4SJ67Pg">
+                    <expressions xmi:type="expression:Expression" xmi:id="_j4hO5oMKEe2ikdr4SJ67Pg" name="Area" content="Area" returnTypeFixed="true"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_j4hO54MKEe2ikdr4SJ67Pg" name="area()" content="return 'Area id= ' + releases_generado.id_area" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_j4hO6IMKEe2ikdr4SJ67Pg" name="releases_generado" dataType="_DUKQ5EAkEe2k-qrfh9_9iQ" className="co.com.semana.bpm.model.ReleaseGenerado"/>
                     </expressions>
                   </expressions>
                 </expression>

@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "TramitarRelease",
   "name" : "TramitarRelease",
-  "lastUpdate" : 1671487907020,
+  "lastUpdate" : 1672173911738,
   "rows" : [
     [
       {
@@ -143,7 +143,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "<b>Tenga en cuenta que, si el proveedor es una persona natural, debe subir los siguientes documentos:</b></br>\n<ul>\n<li> Release firmado</li>\n<li>Copia de identificación del proveedor, por ejemplo, la cédula de ciudadanía o pasaporte”.</li>\n</ul><b>Si el proveedor es una persona jurídica, debe subir los siguientes documentos:</b><br>\n<ul>\n<li>Release firmado.</li>\n<li>Certificado de existencia y representación legal.</li>\n<li>Copia de la cédula de ciudadanía del representante legal.</li>\n</ul></b>"
+                    "value" : "<b>Tenga en cuenta que, si el proveedor es una persona natural, debe subir los siguientes documentos:</b></br>\n<ul>\n<li> Release firmado</li>\n<li>Copia de identificación del proveedor, por ejemplo, la cédula de ciudadanía o pasaporte”.</li>\n</ul><b>Si el proveedor es una persona jurídica, debe subir los siguientes documentos:</b><br>\n<ul>\n<li>Release firmado.</li>\n<li>Cámara de Comercio.</li>\n<li>Copia de la cédula de ciudadanía del representante legal.</li>\n</ul></b>"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -501,7 +501,7 @@
                                           },
                                           "label" : {
                                             "type" : "interpolation",
-                                            "value" : "Nombre tercero"
+                                            "value" : "Nombre del Tercero"
                                           },
                                           "placeholder" : {
                                             "type" : "constant",
@@ -1611,11 +1611,11 @@
                                     },
                                     "labelPosition" : {
                                       "type" : "constant",
-                                      "value" : "top"
+                                      "value" : "left"
                                     },
                                     "labelWidth" : {
                                       "type" : "constant",
-                                      "value" : 4
+                                      "value" : 5
                                     },
                                     "placeholder" : {
                                       "type" : "interpolation",
@@ -2113,6 +2113,37 @@
                                   "reference" : "71e55fa3-4250-4934-9e5f-b3f4f607d633",
                                   "hasValidationError" : false,
                                   "id" : "pbTitle"
+                                }
+                              ],
+                              [
+                                {
+                                  "type" : "container",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 12,
+                                    "lg" : 12
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "repeatedCollection" : {
+                                      "type" : "variable",
+                                      "value" : ""
+                                    }
+                                  },
+                                  "reference" : "767ffaa4-816d-4c8b-844f-ef53a9033969",
+                                  "hasValidationError" : false,
+                                  "id" : "pbContainer",
+                                  "rows" : [
+                                    [ ]
+                                  ]
                                 }
                               ],
                               [
@@ -2631,7 +2662,7 @@
     "directores" : {
       "type" : "url",
       "value" : [
-        "../API/identity/user?p=0&c=100&o=lastname%20ASC&f=enabled=true&f=role_id=101"
+        "../API/identity/user?p=0&c=100&o=lastname%20ASC&f=enabled=true&f=role_id={{APIRoleDirectorData[0].id}}"
       ],
       "advancedOptions" : { },
       "exposed" : false
@@ -2699,6 +2730,14 @@
         "    return instantiationErrorResponse",
         "}"
       ],
+      "exposed" : false
+    },
+    "APIRoleDirectorData" : {
+      "type" : "url",
+      "value" : [
+        "../API/identity/role?p=0&c=100&o=displayName%20ASC&f=name=Director"
+      ],
+      "advancedOptions" : { },
       "exposed" : false
     }
   },
