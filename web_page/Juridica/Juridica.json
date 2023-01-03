@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "Juridica",
   "name" : "Juridica",
-  "lastUpdate" : 1672173150073,
+  "lastUpdate" : 1672775184313,
   "rows" : [
     [
       {
@@ -151,66 +151,8 @@
                     "value" : ""
                   },
                   "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "required" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "label" : {
-                    "type" : "interpolation",
-                    "value" : "Release Firmado"
-                  },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
-                  },
-                  "labelWidth" : {
-                    "type" : "constant",
-                    "value" : 4
-                  },
-                  "placeholder" : {
-                    "type" : "interpolation",
-                    "value" : "Release Firmado"
-                  },
-                  "url" : {
-                    "type" : "constant",
-                    "value" : "../API/formFileUpload"
-                  },
-                  "value" : {
-                    "type" : "variable",
-                    "value" : "formInput.doc_Release_Juridica"
-                  },
-                  "errorContent" : {
-                    "type" : "variable",
-                    "value" : ""
-                  }
-                },
-                "reference" : "b95bcab4-6c5c-4693-b1b8-29aa29ad601f",
-                "hasValidationError" : false,
-                "id" : "pbUpload"
-              },
-              {
-                "type" : "component",
-                "dimension" : {
-                  "xs" : 12,
-                  "sm" : 12,
-                  "md" : 8,
-                  "lg" : 6
-                },
-                "propertyValues" : {
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
+                    "type" : "expression",
+                    "value" : "!context.soporteDocuments_ref"
                   },
                   "disabled" : {
                     "type" : "constant",
@@ -220,46 +162,18 @@
                     "type" : "constant",
                     "value" : false
                   },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Enviar copia al director de fotografía?"
+                    "value" : "<b>Enviar copia al director de fotografía?</b>"
                   },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
-                  },
-                  "labelWidth" : {
-                    "type" : "constant",
-                    "value" : 7
-                  },
-                  "inline" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "availableValues" : {
-                    "type" : "expression",
-                    "value" : "desicion"
-                  },
-                  "displayedKey" : {
-                    "type" : "constant",
-                    "value" : "nombre"
-                  },
-                  "returnedKey" : {
-                    "type" : "constant",
-                    "value" : "id"
-                  },
-                  "selectedValue" : {
+                  "value" : {
                     "type" : "variable",
                     "value" : "dbtramites.copiaFoto"
                   }
                 },
-                "reference" : "fa96810c-5a86-4581-984b-ac35450c0589",
+                "reference" : "e1b17e82-e5a2-4e0c-a333-3ee2ae20dfbd",
                 "hasValidationError" : false,
-                "id" : "pbRadioButtons"
+                "id" : "pbCheckbox"
               }
             ],
             [
@@ -578,6 +492,14 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
                   }
                 },
                 "reference" : "19797564-b872-48ac-beac-5de7db330c32",
@@ -634,7 +556,7 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.dbtramites && $data.formInput.doc_Release_Juridica !== null){",
+        "if( $data.dbtramites ){",
         "\treturn {",
         "\t\t//map dbtramites variable to expected task contract input",
         "\t\tdbtramitesInput: {",
@@ -642,8 +564,7 @@
         "\t\t    id_juridica: $data.dbtramites.id_juridica = $data.session.user_id,",
         "\t\t\taprobacion_juridica: $data.dbtramites.aprobacion_juridica = true,",
         "\t\t\tobs_juridica: $data.dbtramites.obs_juridica !== undefined ? $data.dbtramites.obs_juridica : null",
-        "\t\t},",
-        "\t\tdoc_Release_Juridica: $data.formInput.doc_Release_Juridica",
+        "\t\t}",
         "\t}",
         "}"
       ],
@@ -681,8 +602,7 @@
         "\t\t    id_juridica: $data.dbtramites.id_juridica = $data.session.user_id,",
         "\t\t\taprobacion_juridica: $data.dbtramites.aprobacion_juridica = false,",
         "\t\t\tobs_juridica: $data.dbtramites.obs_juridica !== undefined ? $data.dbtramites.obs_juridica : null",
-        "\t\t},",
-        "\t\tdoc_Release_Juridica: $data.formInput.doc_Release_Juridica",
+        "\t\t}",
         "\t}",
         "}"
       ],
@@ -694,22 +614,6 @@
         "../API/system/session/user_id"
       ],
       "advancedOptions" : { },
-      "exposed" : false
-    },
-    "formInput" : {
-      "type" : "json",
-      "value" : [
-        "{\r",
-        "  \"doc_Release_Juridica\" : null\r",
-        "}"
-      ],
-      "exposed" : false
-    },
-    "desicion" : {
-      "type" : "json",
-      "value" : [
-        "[{\"id\":true,\"nombre\":\"Si\"},{\"id\":false,\"nombre\":\"No\"}]"
-      ],
       "exposed" : false
     }
   },

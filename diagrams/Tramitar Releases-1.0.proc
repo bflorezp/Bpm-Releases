@@ -163,6 +163,43 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_XqL0kX2KEe2TLMaYgv_2gg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_XqL0kH2KEe2TLMaYgv_2gg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_XqL0kn2KEe2TLMaYgv_2gg" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_yaNakIu5Ee2FJtqV2C8Hqw" documentation="conector elimina los documentos de la bd." name="delete_docs_db" definitionId="database-postgresql92" event="ON_ENTER" throwErrorEvent="true" namedError="Error en el conector de eliminacion de documentos en la bd" definitionVersion="1.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_yaNakYu5Ee2FJtqV2C8Hqw" definitionId="database-postgresql92" version="1.0.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yaNakou5Ee2FJtqV2C8Hqw" key="driver">
+                <expression xmi:type="expression:Expression" xmi:id="_yaNak4u5Ee2FJtqV2C8Hqw" name="org.postgresql.Driver" content="org.postgresql.Driver" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yaNalIu5Ee2FJtqV2C8Hqw" key="url">
+                <expression xmi:type="expression:Expression" xmi:id="_yaNalYu5Ee2FJtqV2C8Hqw" name="jdbc:postgresql://localhost:5433/Bpm_Journal" content="jdbc:postgresql://localhost:5433/Bpm_Journal" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yaNalou5Ee2FJtqV2C8Hqw" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_yaNal4u5Ee2FJtqV2C8Hqw" name="script()" content="'delete from document where id in (select documentid  from document_mapping where processinstanceid = ' + processInstanceId + ');'" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_iVTaQIu-Ee2FJtqV2C8Hqw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yaNamYu5Ee2FJtqV2C8Hqw" key="username">
+                <expression xmi:type="expression:Expression" xmi:id="_yaNamou5Ee2FJtqV2C8Hqw" name="bonitadev" content="bonitadev" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yaNam4u5Ee2FJtqV2C8Hqw" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_yaNanIu5Ee2FJtqV2C8Hqw" name="bonitadev" content="bonitadev" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yaNanYu5Ee2FJtqV2C8Hqw" key="separator">
+                <expression xmi:type="expression:Expression" xmi:id="_yaNanou5Ee2FJtqV2C8Hqw" name="" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yaNan4u5Ee2FJtqV2C8Hqw" key="outputType">
+                <expression xmi:type="expression:Expression" xmi:id="_yaNaoIu5Ee2FJtqV2C8Hqw" name="outputType" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_yaNaoYu5Ee2FJtqV2C8Hqw" key="wizardMode">
+                <expression xmi:type="expression:Expression" xmi:id="_yaNaoou5Ee2FJtqV2C8Hqw" name="true" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_yaNao4u5Ee2FJtqV2C8Hqw">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_yaNapIu5Ee2FJtqV2C8Hqw"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_yaNapYu5Ee2FJtqV2C8Hqw" name="resultset" content="resultset" type="CONNECTOR_OUTPUT_TYPE" returnType="java.sql.ResultSet">
+                <referencedElements xmi:type="definition:Output" xmi:id="_yaNapou5Ee2FJtqV2C8Hqw" name="resultset" type="java.sql.ResultSet"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_yaNap4u5Ee2FJtqV2C8Hqw" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <connectors xmi:type="process:Connector" xmi:id="_dfRoIIVrEe2pgvkPVcm9lQ" name="AlertaRechazo" definitionId="email" event="ON_ENTER" throwErrorEvent="true" namedError="Error en alerta rechazo al creador" definitionVersion="1.2.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_dfRoIYVrEe2pgvkPVcm9lQ" definitionId="email" version="1.2.0" modelVersion="7.12.0-004">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_dfRoIoVrEe2pgvkPVcm9lQ" key="smtpHost">
@@ -238,34 +275,6 @@
               </parameters>
             </configuration>
           </connectors>
-          <operations xmi:type="expression:Operation" xmi:id="_g57hoH2KEe2TLMaYgv_2gg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_g57hoX2KEe2TLMaYgv_2gg" name="releaseJuridica" content="releaseJuridica" type="DOCUMENT_REF_TYPE">
-              <referencedElements xmi:type="process:Document" xmi:id="_nTWh0H2KEe2TLMaYgv_2gg" name="releaseJuridica"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_g57hon2KEe2TLMaYgv_2gg" name="newScript()" content="return null" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="org.bonitasoft.engine.bpm.document.DocumentValue"/>
-            <operator xmi:type="expression:Operator" xmi:id="_g57ho32KEe2TLMaYgv_2gg" type="DOCUMENT_CREATE_UPDATE"/>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_1-Po8H2KEe2TLMaYgv_2gg">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_1-Po8X2KEe2TLMaYgv_2gg" name="soporteDocuments" content="soporteDocuments" type="DOCUMENT_REF_TYPE" returnType="java.util.List">
-              <referencedElements xmi:type="process:Document" xmi:id="_2c9lQH2KEe2TLMaYgv_2gg" name="soporteDocuments" multiple="true"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_1-Po8n2KEe2TLMaYgv_2gg" name="newScript()" content="return [];" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
-            <operator xmi:type="expression:Operator" xmi:id="_1-Po832KEe2TLMaYgv_2gg" type="DOCUMENT_LIST_SET"/>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_zXm4gH_oEe2kb5PneZa0NA">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_zXm4gX_oEe2kb5PneZa0NA" name="release_pdf" content="release_pdf" type="DOCUMENT_REF_TYPE">
-              <referencedElements xmi:type="process:Document" xmi:id="_z2GLUH_oEe2kb5PneZa0NA" name="release_pdf"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_zXm4gn_oEe2kb5PneZa0NA" name="newScript()" content="return null" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="org.bonitasoft.engine.bpm.document.DocumentValue"/>
-            <operator xmi:type="expression:Operator" xmi:id="_zXm4g3_oEe2kb5PneZa0NA" type="DOCUMENT_CREATE_UPDATE"/>
-          </operations>
-          <operations xmi:type="expression:Operation" xmi:id="__l9EsH_oEe2kb5PneZa0NA">
-            <leftOperand xmi:type="expression:Expression" xmi:id="__l9EsX_oEe2kb5PneZa0NA" name="terceroDocumento" content="terceroDocumento" type="DOCUMENT_REF_TYPE" returnType="java.util.List">
-              <referencedElements xmi:type="process:Document" xmi:id="_AKQroH_pEe2kb5PneZa0NA" name="terceroDocumento" multiple="true"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="__l9Esn_oEe2kb5PneZa0NA" name="newScript()" content="return []; " interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
-            <operator xmi:type="expression:Operator" xmi:id="__l9Es3_oEe2kb5PneZa0NA" type="DOCUMENT_LIST_SET"/>
-          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_XqL0k32KEe2TLMaYgv_2gg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_XqL0lH2KEe2TLMaYgv_2gg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_XqL0lX2KEe2TLMaYgv_2gg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -417,17 +426,6 @@
               <inputTypes>java.lang.Integer</inputTypes>
             </operator>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_Mr38oH_qEe2kb5PneZa0NA">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_Mr38oX_qEe2kb5PneZa0NA" name="releaseJuridica" content="releaseJuridica" type="DOCUMENT_REF_TYPE">
-              <referencedElements xmi:type="process:Document" xmi:id="_NuFnkH_qEe2kb5PneZa0NA" name="releaseJuridica"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_Mr38on_qEe2kb5PneZa0NA" name="doc_Release_JuridicaInput" content="doc_Release_Juridica" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="org.bonitasoft.engine.bpm.document.DocumentValue">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_RztZIH_qEe2kb5PneZa0NA" name="doc_Release_Juridica" type="FILE">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_RztZIX_qEe2kb5PneZa0NA"/>
-              </referencedElements>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_Mr38o3_qEe2kb5PneZa0NA" type="DOCUMENT_CREATE_UPDATE"/>
-          </operations>
           <operations xmi:type="expression:Operation" xmi:id="_32zgMIFzEe2NK4dz-tmaNg">
             <leftOperand xmi:type="expression:Expression" xmi:id="_32zgMYFzEe2NK4dz-tmaNg" name="envioFotografia" content="envioFotografia" type="TYPE_VARIABLE" returnType="java.lang.Boolean">
               <referencedElements xmi:type="process:Data" xmi:id="_4Tc_8IFzEe2NK4dz-tmaNg" documentation="boolean para almacenar si se envia o no, una copia al director de fotografia" name="envioFotografia" dataType="_2RFMbHAfEe2cB5jZekYyyA"/>
@@ -455,9 +453,6 @@
               <inputs xmi:type="process:ContractInput" xmi:id="_jX_6sIFoEe2NK4dz-tmaNg" name="copiaFoto" type="BOOLEAN">
                 <mapping xmi:type="process:ContractInputMapping" xmi:id="_jX_6sYFoEe2NK4dz-tmaNg"/>
               </inputs>
-            </inputs>
-            <inputs xmi:type="process:ContractInput" xmi:id="_B9vmAH_qEe2kb5PneZa0NA" name="doc_Release_Juridica" type="FILE">
-              <mapping xmi:type="process:ContractInputMapping" xmi:id="_B9vmAX_qEe2kb5PneZa0NA"/>
             </inputs>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_cSW2cnpREe2q-ta0CdyM3A" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -806,9 +801,7 @@
                   <expressions xmi:type="expression:Expression" xmi:id="_cxM484GAEe2NK4dz-tmaNg" name="soporteDocuments" content="soporteDocuments" type="DOCUMENT_REF_TYPE" returnType="java.util.List">
                     <referencedElements xmi:type="process:Document" xmi:id="_cxM49IGAEe2NK4dz-tmaNg" name="soporteDocuments" multiple="true"/>
                   </expressions>
-                  <expressions xmi:type="expression:Expression" xmi:id="_cxM49YGAEe2NK4dz-tmaNg" name="releaseJuridica" content="releaseJuridica" type="DOCUMENT_REF_TYPE">
-                    <referencedElements xmi:type="process:Document" xmi:id="_cxM49oGAEe2NK4dz-tmaNg" name="releaseJuridica"/>
-                  </expressions>
+                  <expressions xmi:type="expression:Expression" xmi:id="_cxM49YGAEe2NK4dz-tmaNg" name="" content=""/>
                 </expression>
               </parameters>
             </configuration>
@@ -933,6 +926,7 @@
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_nejl4H2CEe2hjozTPx5j0Q" type="CONNECTOR" definitionId="email" definitionVersion="1.2.0" implementationId="email-impl" implementationVersion="1.3.0"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_97bsEIVYEe2hn7_p7fRkiA" type="CONNECTOR" definitionId="cmis-createfolder" definitionVersion="2.0.1" implementationId="cmis-createfolder-impl" implementationVersion="3.0.5"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_9793kIVYEe2hn7_p7fRkiA" type="CONNECTOR" definitionId="cmis-uploadnewdocuments" definitionVersion="1.0.0" implementationId="cmis-uploadnewdocuments-impl" implementationVersion="3.0.5"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_4Rv1sIu5Ee2FJtqV2C8Hqw" type="CONNECTOR" definitionId="database-postgresql92" definitionVersion="1.0.0" implementationId="database-postgresql92-impl" implementationVersion="2.0.3"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_vOHugHDdEe2v0a8_erlwOA" id="CONNECTOR">
           <children xmi:type="configuration:FragmentContainer" xmi:id="_ne6LMH2CEe2hjozTPx5j0Q" id="email-impl-1.3.0">
             <fragments xmi:type="configuration:Fragment" xmi:id="_nfR-oH2CEe2hjozTPx5j0Q" key="email-impl -- 1.3.0" value="bonita-connector-email-1.3.0.jar" type="CONNECTOR"/>
@@ -985,6 +979,9 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_98Uc4IVYEe2hn7_p7fRkiA" key="cmis-uploadnewdocuments-impl -- 3.0.5" value="xml-resolver-1.2.jar" type="CONNECTOR"/>
             <fragments xmi:type="configuration:Fragment" xmi:id="_98Uc4YVYEe2hn7_p7fRkiA" key="cmis-uploadnewdocuments-impl -- 3.0.5" value="xmlschema-core-2.2.1.jar" type="CONNECTOR"/>
           </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_4SWSoIu5Ee2FJtqV2C8Hqw" id="database-postgresql92-impl-2.0.3">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_4SdAUIu5Ee2FJtqV2C8Hqw" key="database-postgresql92-impl -- 2.0.3" value="bonita-connector-database-2.0.3.jar" type="CONNECTOR"/>
+          </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_vOHugXDdEe2v0a8_erlwOA" id="GROOVY_SCRIPT"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_vOHugnDdEe2v0a8_erlwOA" id="ACTOR_FILTER">
@@ -992,7 +989,9 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_rTUI0HWeEe2cLcfSu6khRw" key="bonita-actorfilter-single-user-impl -- 1.0.0" value="bonita-actorfilter-single-user-1.0.0.jar" type="ACTOR_FILTER"/>
           </children>
         </processDependencies>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_vOHug3DdEe2v0a8_erlwOA" id="OTHER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_vOHug3DdEe2v0a8_erlwOA" id="OTHER">
+          <fragments xmi:type="configuration:Fragment" xmi:id="_4Ze1YIu5Ee2FJtqV2C8Hqw" key="postgresql-42.2.19.jar" value="postgresql-42.2.19.jar" type="JAR"/>
+        </processDependencies>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_vOHuhHDdEe2v0a8_erlwOA" id="GROOVY_SCRIPT"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_vOHuhXDdEe2v0a8_erlwOA" id="OTHER"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_eLRfEHWfEe2cLcfSu6khRw" name="cmisUrl" value="http://localhost:8181/alfresco/api/-default-/public/cmis/versions/1.1/atom" typeClassname="java.lang.String"/>
@@ -1001,7 +1000,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_eLXlsXWfEe2cLcfSu6khRw" name="cmisNombreRepositorio" value="Repository" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_eLXlsnWfEe2cLcfSu6khRw" name="correo_Notificacion" value="notificaciones@semana.com" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_eLXls3WfEe2cLcfSu6khRw" name="correo_Contrasenna" value="Notificaciones2018" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_JQ8b8HsKEe2dspgHjdbv5g" name="asunto_Director" value="Pendiente aprobacion release" typeClassname="java.lang.String" description="PArametro para el asunto del director"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_JQ8b8HsKEe2dspgHjdbv5g" name="asunto_Director" value="Pendiente aprobacion release No°" typeClassname="java.lang.String" description="PArametro para el asunto del director"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_cs8ggIF_Ee2NK4dz-tmaNg" name="asuntoDirectorFotografia" value="Copia documentos release" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_KTrgUILWEe2ikdr4SJ67Pg" name="asuntoApruebaDirector" value="Release aprobado. No° " typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_98ZVYIVYEe2hn7_p7fRkiA" name="correoDirectoFotografia" value="bflorezp@semana.com" typeClassname="java.lang.String"/>
@@ -1048,11 +1047,6 @@
           </inputs>
         </inputs>
       </contract>
-      <documents xmi:type="process:Document" xmi:id="_-6s3wHWhEe2cLcfSu6khRw" name="releaseJuridica">
-        <mimeType xmi:type="expression:Expression" xmi:id="_-6s3wXWhEe2cLcfSu6khRw" name="" content="" returnTypeFixed="true"/>
-        <url xmi:type="expression:Expression" xmi:id="_-6s3wnWhEe2cLcfSu6khRw" name="" content="" returnTypeFixed="true"/>
-        <initialMultipleContent xmi:type="expression:Expression" xmi:id="_-6s3w3WhEe2cLcfSu6khRw" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
-      </documents>
       <documents xmi:type="process:Document" xmi:id="_-w-E0HsDEe2dspgHjdbv5g" documentation="Documento de Camara y comercio" name="terceroDocumento" documentType="CONTRACT" multiple="true" contractInput="__RKW4H_cEe2kb5PneZa0NA">
         <mimeType xmi:type="expression:Expression" xmi:id="_-w-E0XsDEe2dspgHjdbv5g" name="" content="" returnTypeFixed="true"/>
         <url xmi:type="expression:Expression" xmi:id="_-w-E0nsDEe2dspgHjdbv5g" name="" content="" returnTypeFixed="true"/>

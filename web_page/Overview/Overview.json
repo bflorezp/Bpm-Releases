@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "Overview",
   "name" : "Overview",
-  "lastUpdate" : 1672177823982,
+  "lastUpdate" : 1672689227784,
   "rows" : [
     [
       {
@@ -1726,127 +1726,6 @@
               "reference" : "f300df05-a676-4b4c-b68c-cdfbd883b478",
               "hasValidationError" : false,
               "id" : "pbText"
-            }
-          ],
-          [
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 12,
-                "sm" : 12,
-                "md" : 12,
-                "lg" : 12
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : "titles"
-                },
-                "hidden" : {
-                  "type" : "expression",
-                  "value" : "!context.releaseJuridica_ref"
-                },
-                "labelHidden" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "label" : {
-                  "type" : "interpolation",
-                  "value" : "Default label"
-                },
-                "labelPosition" : {
-                  "type" : "constant",
-                  "value" : "top"
-                },
-                "labelWidth" : {
-                  "type" : "constant",
-                  "value" : 4
-                },
-                "allowHTML" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "<b>Release Firmado Por Jurídica</b>"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "left"
-                }
-              },
-              "reference" : "0e483963-59c5-4454-a201-7f0fc481ed51",
-              "hasValidationError" : false,
-              "id" : "pbText"
-            }
-          ],
-          [
-            {
-              "type" : "component",
-              "dimension" : {
-                "xs" : 12,
-                "sm" : 12,
-                "md" : 12,
-                "lg" : 12
-              },
-              "propertyValues" : {
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "hidden" : {
-                  "type" : "expression",
-                  "value" : "!context.releaseJuridica_ref"
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "{{context.releaseJuridica_ref.contentFileName}}"
-                },
-                "type" : {
-                  "type" : "constant",
-                  "value" : "URL"
-                },
-                "targetUrl" : {
-                  "type" : "expression",
-                  "value" : "pathLinkDocuments + context.releaseJuridica_ref.id"
-                },
-                "pageToken" : {
-                  "type" : "constant"
-                },
-                "processName" : {
-                  "type" : "constant"
-                },
-                "processVersion" : {
-                  "type" : "constant"
-                },
-                "taskId" : {
-                  "type" : "constant"
-                },
-                "caseId" : {
-                  "type" : "constant"
-                },
-                "target" : {
-                  "type" : "constant",
-                  "value" : "_blank"
-                },
-                "appToken" : {
-                  "type" : "constant"
-                },
-                "urlParams" : {
-                  "type" : "constant"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "left"
-                },
-                "buttonStyle" : {
-                  "type" : "constant",
-                  "value" : "info"
-                }
-              },
-              "reference" : "41066164-599e-4219-ac07-1e765271ea7d",
-              "hasValidationError" : false,
-              "id" : "pbLink"
             }
           ],
           [

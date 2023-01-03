@@ -39,5 +39,7 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
     color: #C0392B;
     background-color: #CCD1D1;
     font-family: sans-serif;
+    width: 100%;
+    margin: 10px auto;
 }
 
