@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "TramitarRelease",
   "name" : "TramitarRelease",
-  "lastUpdate" : 1672692341394,
+  "lastUpdate" : 1673649124184,
   "rows" : [
     [
       {
@@ -2721,7 +2721,7 @@
     "codigos" : {
       "type" : "businessdata",
       "value" : [
-        "{\"displayValue\":\"findByEstado [co.com.semana.bpm.model.Codigos]\",\"businessObjectName\":\"undefined\",\"query\":{\"name\":\"findByEstado\",\"displayName\":\"findByEstado\"},\"id\":\"co.com.semana.bpm.model.Codigos\",\"filters\":[{\"name\":\"estado\",\"type\":\"LONG\",\"collection\":false,\"value\":\"1\"}],\"pagination\":{\"p\":\"0\",\"c\":\"1000000\"}}"
+        "{\"displayValue\":\"findByEstado [co.com.semana.bpm.model.Codigos]\",\"businessObjectName\":\"undefined\",\"query\":{\"name\":\"findByEstado\",\"displayName\":\"findByEstado\"},\"id\":\"co.com.semana.bpm.model.Codigos\",\"filters\":[{\"name\":\"estado\",\"type\":\"LONG\",\"collection\":false,\"value\":\"1\"}],\"pagination\":{\"p\":\"0\",\"c\":\"10000000\"}}"
       ],
       "exposed" : false
     },

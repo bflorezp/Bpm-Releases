@@ -11,7 +11,7 @@
   ],
   "id" : "customLivingApplicationIFrameV4",
   "name" : "livingApplicationIFrameV4",
-  "lastUpdate" : 1672160656421,
+  "lastUpdate" : 1673546077042,
   "template" : "@customLivingApplicationIFrameV4.tpl.html",
   "controller" : "@customLivingApplicationIFrameV4.ctrl.js",
   "description" : "LivingApplicationIFrameV4 display the pages targeted by the LivingApplicationMenu.",

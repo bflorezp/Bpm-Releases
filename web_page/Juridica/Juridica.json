@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "Juridica",
   "name" : "Juridica",
-  "lastUpdate" : 1672775184313,
+  "lastUpdate" : 1673477410069,
   "rows" : [
     [
       {
@@ -174,6 +174,56 @@
                 "reference" : "e1b17e82-e5a2-4e0c-a333-3ee2ae20dfbd",
                 "hasValidationError" : false,
                 "id" : "pbCheckbox"
+              },
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 8,
+                  "lg" : 6
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Default label"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "{{dbtramites}}<br>{{context}}"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "83c047e2-64c5-4dff-83aa-7393cb6abb1f",
+                "hasValidationError" : false,
+                "id" : "pbText"
               }
             ],
             [

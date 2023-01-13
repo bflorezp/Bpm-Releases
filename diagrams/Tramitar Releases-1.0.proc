@@ -91,6 +91,49 @@
               </parameters>
             </configuration>
           </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_jV5scJOREe2dBPDfNfymdA" documentation="conector Actualiza el estado del codigo en la bd para estar en tramite" name="updateEstadoCodigoEnTramite" definitionId="database-postgresql92" event="ON_ENTER" throwErrorEvent="true" namedError="Error en el conector de Actualiza el estado en tramite del codigo en la bd" definitionVersion="1.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_jV5scZOREe2dBPDfNfymdA" definitionId="database-postgresql92" version="1.0.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jV5scpOREe2dBPDfNfymdA" key="driver">
+                <expression xmi:type="expression:Expression" xmi:id="_jV5sc5OREe2dBPDfNfymdA" name="org.postgresql.Driver" content="org.postgresql.Driver" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jV5sdJOREe2dBPDfNfymdA" key="url">
+                <expression xmi:type="expression:Expression" xmi:id="_jV5sdZOREe2dBPDfNfymdA" name="uRLdbconectorScript" content="uRLdbconectorScript" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_4ioPQJOZEe2dBPDfNfymdA" name="uRLdbconectorScript" typeClassname="java.lang.String" description="url para el jdbc conector"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jV5sdpOREe2dBPDfNfymdA" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_jV5sd5OREe2dBPDfNfymdA" name="script()" content="&quot;UPDATE codigos SET estado = 3 WHERE consecutivo = '&quot; + dbtramites.codigo + &quot;';&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_8cdhMJOREe2dBPDfNfymdA" documentation="base de datos para los tramites de los releases" name="dbtramites" dataType="_2RFMdHAfEe2cB5jZekYyyA" className="co.com.semana.bpm.model.ReleasesTramites"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jV5seZOREe2dBPDfNfymdA" key="username">
+                <expression xmi:type="expression:Expression" xmi:id="_jV5sepOREe2dBPDfNfymdA" name="userDB" content="userDB" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_jV5se5OREe2dBPDfNfymdA" name="userDB" typeClassname="java.lang.String" description="usuario de la bd"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jV5sfJOREe2dBPDfNfymdA" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_jV5sfZOREe2dBPDfNfymdA" name="contrasennabd" content="contrasennabd" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_jV5sfpOREe2dBPDfNfymdA" name="contrasennabd" typeClassname="java.lang.String" description="contraseña bd "/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jV5sf5OREe2dBPDfNfymdA" key="separator">
+                <expression xmi:type="expression:Expression" xmi:id="_jV5sgJOREe2dBPDfNfymdA" name="" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jV5sgZOREe2dBPDfNfymdA" key="outputType">
+                <expression xmi:type="expression:Expression" xmi:id="_jV5sgpOREe2dBPDfNfymdA" name="outputType" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_jV5sg5OREe2dBPDfNfymdA" key="wizardMode">
+                <expression xmi:type="expression:Expression" xmi:id="_jV5shJOREe2dBPDfNfymdA" name="true" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_jV5shZOREe2dBPDfNfymdA">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_jV5shpOREe2dBPDfNfymdA"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_jV5sh5OREe2dBPDfNfymdA" name="resultset" content="resultset" type="CONNECTOR_OUTPUT_TYPE" returnType="java.sql.ResultSet">
+                <referencedElements xmi:type="definition:Output" xmi:id="_jV5siJOREe2dBPDfNfymdA" name="resultset" type="java.sql.ResultSet"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_jV5siZOREe2dBPDfNfymdA" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_Ldv2s3WkEe2cLcfSu6khRw">
             <leftOperand xmi:type="expression:Expression" xmi:id="_Ldv2tHWkEe2cLcfSu6khRw" name="dbtramites" content="dbtramites" type="TYPE_VARIABLE" returnType="co.com.semana.bpm.model.ReleasesTramites">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Ldv2tXWkEe2cLcfSu6khRw" documentation="base de datos para los tramites de los releases" name="dbtramites" dataType="_2RFMdHAfEe2cB5jZekYyyA" className="co.com.semana.bpm.model.ReleasesTramites"/>
@@ -233,6 +276,47 @@
               </parameters>
             </configuration>
           </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_Z5zzMJOWEe2dBPDfNfymdA" documentation="conector Actualiza el estado del codigo en la bd para estar Generado" name="updateEstadoCodigoGenerado" definitionId="database-postgresql92" event="ON_ENTER" throwErrorEvent="true" namedError="Error en el conector de Actualiza el estado Generado del codigo en la bd" definitionVersion="1.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_Z5zzMZOWEe2dBPDfNfymdA" definitionId="database-postgresql92" version="1.0.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Z5zzMpOWEe2dBPDfNfymdA" key="driver">
+                <expression xmi:type="expression:Expression" xmi:id="_Z5zzM5OWEe2dBPDfNfymdA" name="org.postgresql.Driver" content="org.postgresql.Driver" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Z5zzNJOWEe2dBPDfNfymdA" key="url">
+                <expression xmi:type="expression:Expression" xmi:id="_Z5zzNZOWEe2dBPDfNfymdA" name="jdbc:postgresql://localhost:5433/Bpm_Business" content="jdbc:postgresql://localhost:5433/Bpm_Business" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Z5zzNpOWEe2dBPDfNfymdA" key="script">
+                <expression xmi:type="expression:Expression" xmi:id="_Z5zzN5OWEe2dBPDfNfymdA" name="script()" content="&quot;UPDATE codigos SET estado = 1 WHERE consecutivo = '&quot; + dbtramites.codigo + &quot;';&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_kFN3QJOWEe2dBPDfNfymdA" documentation="base de datos para los tramites de los releases" name="dbtramites" dataType="_2RFMdHAfEe2cB5jZekYyyA" className="co.com.semana.bpm.model.ReleasesTramites"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Z5zzOZOWEe2dBPDfNfymdA" key="username">
+                <expression xmi:type="expression:Expression" xmi:id="_Z5zzOpOWEe2dBPDfNfymdA" name="userDB" content="userDB" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_Z5zzO5OWEe2dBPDfNfymdA" name="userDB" typeClassname="java.lang.String" description="usuario de la bd"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Z5zzPJOWEe2dBPDfNfymdA" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_Z5zzPZOWEe2dBPDfNfymdA" name="contrasennabd" content="contrasennabd" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_Z5zzPpOWEe2dBPDfNfymdA" name="contrasennabd" typeClassname="java.lang.String" description="contraseña bd "/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Z5zzP5OWEe2dBPDfNfymdA" key="separator">
+                <expression xmi:type="expression:Expression" xmi:id="_Z5zzQJOWEe2dBPDfNfymdA" name="" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Z5zzQZOWEe2dBPDfNfymdA" key="outputType">
+                <expression xmi:type="expression:Expression" xmi:id="_Z5zzQpOWEe2dBPDfNfymdA" name="outputType" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Z5zzQ5OWEe2dBPDfNfymdA" key="wizardMode">
+                <expression xmi:type="expression:Expression" xmi:id="_Z5zzRJOWEe2dBPDfNfymdA" name="true" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_Z5zzRZOWEe2dBPDfNfymdA">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_Z5zzRpOWEe2dBPDfNfymdA"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_Z5zzR5OWEe2dBPDfNfymdA" name="resultset" content="resultset" type="CONNECTOR_OUTPUT_TYPE" returnType="java.sql.ResultSet">
+                <referencedElements xmi:type="definition:Output" xmi:id="_Z5zzSJOWEe2dBPDfNfymdA" name="resultset" type="java.sql.ResultSet"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_Z5zzSZOWEe2dBPDfNfymdA" type="ASSIGNMENT"/>
+            </outputs>
+          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_XqL0k32KEe2TLMaYgv_2gg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_XqL0lH2KEe2TLMaYgv_2gg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_XqL0lX2KEe2TLMaYgv_2gg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -249,7 +333,9 @@
                 <expression xmi:type="expression:Expression" xmi:id="_Pf5Qh4wsEe2qfIRD_8MYPQ" name="org.postgresql.Driver" content="org.postgresql.Driver" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Pf5QiIwsEe2qfIRD_8MYPQ" key="url">
-                <expression xmi:type="expression:Expression" xmi:id="_Pf5QiYwsEe2qfIRD_8MYPQ" name="jdbc:postgresql://localhost:5433/Bpm_Journal" content="jdbc:postgresql://localhost:5433/Bpm_Journal" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_Pf5QiYwsEe2qfIRD_8MYPQ" name="uRLdbconectorScript" content="uRLdbconectorScript" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_B71aUJOaEe2dBPDfNfymdA" name="uRLdbconectorScript" typeClassname="java.lang.String" description="url para el jdbc conector"/>
+                </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_Pf5QiowsEe2qfIRD_8MYPQ" key="script">
                 <expression xmi:type="expression:Expression" xmi:id="_Pf5Qi4wsEe2qfIRD_8MYPQ" name="script()" content="'delete from document where id in (select documentid  from document_mapping where processinstanceid = ' + processInstanceId + ');'" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
@@ -947,7 +1033,9 @@
                 <expression xmi:type="expression:Expression" xmi:id="__x0QR4w6Ee2qfIRD_8MYPQ" name="org.postgresql.Driver" content="org.postgresql.Driver" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="__x0QSIw6Ee2qfIRD_8MYPQ" key="url">
-                <expression xmi:type="expression:Expression" xmi:id="__x0QSYw6Ee2qfIRD_8MYPQ" name="jdbc:postgresql://localhost:5433/Bpm_Business" content="jdbc:postgresql://localhost:5433/Bpm_Business" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="__x0QSYw6Ee2qfIRD_8MYPQ" name="uRLdbconectorScript" content="uRLdbconectorScript" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_FBHwQJOaEe2dBPDfNfymdA" name="uRLdbconectorScript" typeClassname="java.lang.String" description="url para el jdbc conector"/>
+                </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="__x0QSow6Ee2qfIRD_8MYPQ" key="script">
                 <expression xmi:type="expression:Expression" xmi:id="__x0QS4w6Ee2qfIRD_8MYPQ" name="script()" content="&quot;UPDATE codigos SET estado = 2 WHERE consecutivo = '&quot; + dbtramites.codigo + &quot;';&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
@@ -1214,6 +1302,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_98ZVYIVYEe2hn7_p7fRkiA" name="correoDirectoFotografia" value="bflorezp@semana.com" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_UvNMAIxCEe2qfIRD_8MYPQ" name="userDB" value="bonitadev" typeClassname="java.lang.String" description="usuario de la bd"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_YbTDQIxCEe2qfIRD_8MYPQ" name="contrasennabd" value="bonitadev" typeClassname="java.lang.String" description="contraseña bd "/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_21PgYJOZEe2dBPDfNfymdA" name="uRLdbconectorScript" value="jdbc:postgresql://localhost:5433/Bpm_Business" typeClassname="java.lang.String" description="url para el jdbc conector"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_Vwo1EHWfEe2cLcfSu6khRw" name="cmisUrl" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_XoXLsHWfEe2cLcfSu6khRw" name="cmisContrasenna" typeClassname="java.lang.String"/>
@@ -1227,6 +1316,7 @@
       <parameters xmi:type="parameter:Parameter" xmi:id="_KTNmQILWEe2ikdr4SJ67Pg" name="asuntoApruebaDirector" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_UuyVQIxCEe2qfIRD_8MYPQ" name="userDB" typeClassname="java.lang.String" description="usuario de la bd"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_Ya5aoIxCEe2qfIRD_8MYPQ" name="contrasennabd" typeClassname="java.lang.String" description="contraseña bd "/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_20sGwJOZEe2dBPDfNfymdA" name="uRLdbconectorScript" typeClassname="java.lang.String" description="url para el jdbc conector"/>
       <contract xmi:type="process:Contract" xmi:id="_2RFMXHAfEe2cB5jZekYyyA">
         <inputs xmi:type="process:ContractInput" xmi:id="_3J3B0HA0Ee2cB5jZekYyyA" name="dbtramitesInput" type="COMPLEX" dataReference="dbtramites">
           <inputs xmi:type="process:ContractInput" xmi:id="_3J3B0XA0Ee2cB5jZekYyyA" name="id_creador" type="INTEGER"/>

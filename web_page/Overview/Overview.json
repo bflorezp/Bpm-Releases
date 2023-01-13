@@ -1949,7 +1949,7 @@
         "../{{context.dbtramites_ref.link}}"
       ],
       "advancedOptions" : { },
-      "exposed" : false
+      "exposed" : true
     },
     "DataDirector" : {
       "type" : "url",

@@ -2,7 +2,7 @@
   "modelVersion" : "2.2",
   "id" : "GeneraRelease",
   "name" : "GeneraRelease",
-  "lastUpdate" : 1669835520402,
+  "lastUpdate" : 1673447207314,
   "rows" : [
     [
       {
@@ -210,7 +210,7 @@
                         },
                         "availableValues" : {
                           "type" : "expression",
-                          "value" : "tipos_release"
+                          "value" : "listadoReleases"
                         },
                         "displayedKey" : {
                           "type" : "constant",
@@ -886,6 +886,14 @@
       "value" : [
         "[{\"id\":true,\"nombre\":\"SI\"},{\"id\":false,\"nombre\":\"NO\"}]"
       ],
+      "exposed" : false
+    },
+    "listadoReleases" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/co.com.semana.bpm.model.TipoRelease?q=findByEstado&p=0&c=60&f=estado=ACTIVO"
+      ],
+      "advancedOptions" : { },
       "exposed" : false
     }
   },
